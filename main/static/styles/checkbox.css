@@ -27,8 +27,20 @@
     background-color: rgb(255, 255, 255);
 }
 
+.checkbox_container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
 .checkbox_container input:checked ~ .checkmark {
     background-color: #2196f3;
+   
+    
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
 }
 .checkbox_container input:checked ~ .checkmark {
     display: block;

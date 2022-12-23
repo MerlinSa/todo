@@ -8,6 +8,9 @@
 }
 body{
     background-color: rgb(172, 206, 245);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 section{
     width: 100%;
@@ -21,6 +24,7 @@ section{
     width: 80%;
     align-items: center;
     justify-content: center;
+    padding-left: 100px;
 }
 
 .create_input{
