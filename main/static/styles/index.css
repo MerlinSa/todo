@@ -2,7 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color:#263238
+    color:#263238;
+    background-color: rgb(172, 206, 245);
+    
 }
 section{
     width: 100%;
