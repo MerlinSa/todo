@@ -25,6 +25,8 @@ section{
     align-items: center;
     justify-content: center;
     padding-left: 100px;
+    padding-top: 20px;
+    
 }
 
 .create_input{
