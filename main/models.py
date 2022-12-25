@@ -8,8 +8,8 @@ class ToDo(models.Model):
 
 class ToMeet(models.Model):
     text = models.CharField(max_length=100)
-    created_at = models.DateField(auto_now_add=True)
     persone = models.CharField(max_length=60)
+    created_at = models.DateField(auto_now_add=True)
     phone_number = models.IntegerField()
     date_of_meeting = models.DateField()
     comment = models.CharField(max_length=100)

@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Todo</title>
+    <title>ToMeet</title>
     <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
     <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
 </head>
 <body>
-    <!-- <h2>Это тестовая страница</h2>
-    {% for todo in todo_list %}
-        <h3>{{todo.text }} - {{ todo.created_at }}</h3>
-    {% endfor %} -->
     <secton>
         <div class="create_container">
             <input 
@@ -23,17 +19,17 @@
             <button class="create_button">Добавить</button>
         </div>
         <div class="todo_container">
-            {% for todo in todo_list %}
+            {% for tomeet in tomeet_list %}
             <div class="todo_item">
                 <div class="todo_item_header">
                     <label class="checkbox_container">
                         <input type="checkbox">
                         <span class="checkmark"></span>
                     </label>
-                    <h4>{{ todo.text }}</h4>
+                    <h4>{{ tomeet.text }}</h4>
                     </div>
                     <div class="todo_item_footer">
-                    <p>{{ todo.created_at }}</p>
+                    <p>{{ tomeet.created_at }}</p>
                     <div class="action_buttons">
                         <img src="{% static 'icons/star.png' %}"/>
                         <img src="{% static 'icons/png-trash.png' %}"/>
