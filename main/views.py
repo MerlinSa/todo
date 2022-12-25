@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo
 from .models import ToMeet
+from .models import Habits
 
 # Create your views here.
 def homepage(request):
@@ -20,6 +21,24 @@ def add_todo(request):
     todo = ToDo(text=text)
     todo.save()
     return redirect(test)
+
+def add_tomeet(request):
+    form = request.POST
+    text = form["tomeet_text"]
+    tomeet = ToMeet(text=text)
+    tomeet.save()
+    return redirect(test2)
+
+def habit1(request):
+    habits_list = Habits.objects.all()
+    return render(request, 'habits.html', {"habits_list": habits_list})
+
+def add_habits(request):
+    form = request.POST
+    text = form["habits_text"]
+    habits = Habits(text=text)
+    habits.save()
+    return redirect(habit1)
 
 
 
