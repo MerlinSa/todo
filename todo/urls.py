@@ -31,6 +31,7 @@ urlpatterns = [
     path("add-tomeet/", add_tomeet, name="add-tomeet"),
     path("habit1/", habit1, name="habit1"),
     path("add-habits/", add_habits, name="add-habits"),
+    path("close-todo/<id>/", close_todo, name="close-todo"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
