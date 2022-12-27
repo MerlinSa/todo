@@ -52,6 +52,11 @@ def add_tomeet(request): #дз
     tomeet.save()
     return redirect(test2)
 
+def delete_tomeet(request, id):
+    tomeet = ToMeet.objects.get(id=id)
+    tomeet.delete()
+    return redirect(test2)
+
 def habit1(request):
     habits_list = Habits.objects.all()
     return render(request, 'habits.html', {"habits_list": habits_list})

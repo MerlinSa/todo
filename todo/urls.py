@@ -29,6 +29,7 @@ urlpatterns = [
     path("mark-todo/<id>/", mark_todo, name="mark-todo"),
     path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
     path("add-tomeet/", add_tomeet, name="add-tomeet"),
+    path("delete-tomeet/<id>/", delete_tomeet, name="delete-tomeet"),
     path("habit1/", habit1, name="habit1"),
     path("add-habits/", add_habits, name="add-habits"),
     path("close-todo/<id>/", close_todo, name="close-todo"),

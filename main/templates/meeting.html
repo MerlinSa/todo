@@ -37,7 +37,9 @@
                     <p>{{ tomeet.created_at }}</p>
                     <div class="action_buttons">
                         <img src="{% static 'icons/star.png' %}"/>
-                        <img src="{% static 'icons/png-trash.png' %}"/>
+                        
+
+                        <a href="{% url 'delete-tomeet' tomeet.id %}"><img src="{% static 'icons/png-trash.png' %}"/></a>
                     </div>
                 </div>
             </div>
