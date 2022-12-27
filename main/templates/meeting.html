@@ -25,7 +25,12 @@
         </div>
         <div class="todo_container">
             {% for tomeet in tomeet_list %}
-            <div class="todo_item">
+            <div class="todo_item
+                {% if tomeet.is_favorite %}
+                    marked
+                {% endif %}
+            
+            ">
                 <div class="todo_item_header">
                     <label class="checkbox_container">
                         <input type="checkbox">
@@ -36,9 +41,13 @@
                     <div class="todo_item_footer">
                     <p>{{ tomeet.created_at }}</p>
                     <div class="action_buttons">
-                        <img src="{% static 'icons/star.png' %}"/>
-                        
-
+                        {% if tomeet.is_favorite %}
+                        <a href="{% url 'unmark-tomeet' tomeet.id %}"><img src="{% static 'icons/coloredstar.png' %}"/></a>
+                        {% elif false %}
+                        <a href="{% url 'unmark-tomeet' tomeet.id %}"><img src="{% static 'icons/star.png' %}"/></a>
+                        {% else %}
+                        <a href="{% url 'mark-tomeet' tomeet.id %}"><img src="{% static 'icons/star.png' %}"/></a>
+                        {% endif %}
                         <a href="{% url 'delete-tomeet' tomeet.id %}"><img src="{% static 'icons/png-trash.png' %}"/></a>
                     </div>
                 </div>

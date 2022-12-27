@@ -52,10 +52,25 @@ def add_tomeet(request): #дз
     tomeet.save()
     return redirect(test2)
 
-def delete_tomeet(request, id):
+def delete_tomeet(request, id): #Создайте функцию delete_to_meet для модели ToMeet и подключите ее к кнопке удалить.
     tomeet = ToMeet.objects.get(id=id)
     tomeet.delete()
     return redirect(test2)
+
+def mark_tomeet(request, id):  #Создайте функцию mark_to_meet для модели ToMeet. (урок 31) Подключите ее к подходящей кнопке.
+    tomeet = ToMeet.objects.get(id=id)
+    tomeet.is_favorite = True
+    tomeet.save()
+    return redirect(test2) 
+    
+def unmark_tomeet(request, id):  #Создайте функцию unmark_to_meet для модели ToMeet.
+    tomeet = ToMeet.objects.get(id=id)
+    tomeet.is_favorite = False
+    tomeet.save()
+    return redirect(test2)  
+
+
+
 
 def habit1(request):
     habits_list = Habits.objects.all()
