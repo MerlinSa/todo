@@ -20,21 +20,22 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', homepage, name="home"),
-    path ("test/", test, name="test"),
-    path("test2/", test2, name="test2"),
-    path("add-todo/", add_todo, name="add-todo"),
-    path("delete-todo/<id>/", delete_todo, name="delete-todo"),
-    path("mark-todo/<id>/", mark_todo, name="mark-todo"),
-    path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
-    path("add-tomeet/", add_tomeet, name="add-tomeet"),
+    path('admin/', admin.site.urls),#урок
+    path('', homepage, name="home"),#урок
+    path ("test/", test, name="test"),#урок
+    path("test2/", test2, name="test2"),#урок
+    path("add-todo/", add_todo, name="add-todo"),#урок
+    path("delete-todo/<id>/", delete_todo, name="delete-todo"),#урок
+    path("mark-todo/<id>/", mark_todo, name="mark-todo"),#урок
+    path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),#дз
+    path("close-todo/<id>/", close_todo, name="close-todo"),#урок
+    path("add-tomeet/", add_tomeet, name="add-tomeet"),#дз
     path("delete-tomeet/<id>/", delete_tomeet, name="delete-tomeet"), #Создайте функцию delete_to_meet для модели ToMeet и подключите ее к кнопке удалить.
     path("mark-tomeet/<id>/", mark_tomeet, name="mark-tomeet"),     #Создайте функцию mark_to_meet для модели ToMeet. (урок 31) Подключите ее к подходящей кнопке.
-    path("unmark-tomeet/<id>/", unmark_tomeet, name="unmark-tomeet"),
-    path("habit1/", habit1, name="habit1"),
-    path("add-habits/", add_habits, name="add-habits"),
-    path("close-todo/<id>/", close_todo, name="close-todo"),
+    path("unmark-tomeet/<id>/", unmark_tomeet, name="unmark-tomeet"),#дз
+    path("close-tomeet/<id>/", close_tomeet, name="close-tomeet"),#дз
+    path("habit1/", habit1, name="habit1"), #дз
+    path("add-habits/", add_habits, name="add-habits"), #дз
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

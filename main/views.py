@@ -69,7 +69,11 @@ def unmark_tomeet(request, id):  #Создайте функцию unmark_to_meet
     tomeet.save()
     return redirect(test2)  
 
-
+def close_tomeet(request, id):
+    tomeet = ToMeet.objects.get(id=id)
+    tomeet.is_closed = not tomeet.is_closed
+    tomeet.save()
+    return redirect(test2)
 
 
 def habit1(request):
