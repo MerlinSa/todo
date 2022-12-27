@@ -26,9 +26,20 @@ def delete_todo(request, id):
     todo = ToDo.objects.get(id=id)
     todo.delete()
     return redirect(test)
-    
 
-def add_tomeet(request):
+def mark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(test)
+ 
+def unmark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favorite = False
+    todo.save()
+    return redirect(test)
+
+def add_tomeet(request): #дз
     form = request.POST
     text = form["tomeet_text"]
     tomeet = ToMeet(text=text)
